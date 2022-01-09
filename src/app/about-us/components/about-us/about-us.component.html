@@ -1,0 +1,56 @@
+<div class="header_about_us">
+    <div class="box">
+        <img src="./assets/images/foto_platzi.png">
+    </div>
+</div>
+
+<div class="container_about_us">
+    <div class="row" id="container_info">
+        <div class="col-lg-4 col-md-4" id="info">
+            <h2>La forma en que nos presentamos, lo que usamos, es la marca de una actitud frente a la vida :)</h2>
+            <p>
+                Platzi-Store construye comunidad, nuestros productos nos recuerdan la regla a través de la
+                cual nos sentimos parte de algo mayor: <strong>"Nunca pares de aprender"</strong>. Contagiamos este espíritu
+                a los demás con nuestra actitud, la cual incluye la forma cómo nos presentamos al mundo.
+            </p>
+            <p>
+                Nuestros diseños son juveniles, frescos y cercanos. Atributos que hacen parte
+                de nuestra cultura. Transmiten apertura y ánimo creativo.
+            </p>
+        </div>
+        <div class="col-lg-3 col-md-3" id="ciudades">
+            <h3>Nuestras tiendas</h3>
+            <mat-form-field appearance="fill">
+                <mat-label>Seleccione una ciudad</mat-label>
+                <mat-select [(value)]="selected" (selectionChange)='getLocalizacion(selected)'>
+                  <mat-option 
+                    *ngFor="let tienda of localizaciones" 
+                    [value]="tienda.tienda">{{tienda.tienda}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-lg-5 col-md-5" id="mapas">
+            <google-map  height="330px" width="450px"
+                [center]="tienda_elegida.center"
+                [zoom]="zoom">
+            </google-map>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--450px,330px 
+<div class="row">
+    <div class="col-lg-3 col-md-3"></div>
+    <div class="col-lg-6 col-md-6">
+        <google-map width="100%" 
+            height="450px"
+            [center]="center"
+            [zoom]="zoom">
+        </google-map>
+    </div>
+    <div class="col-lg-3 col-md-3"></div>
+</div> -->
